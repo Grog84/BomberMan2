@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>BomberMan2</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>3i7ec7mzvc2n7</unique-id>
+    <saved-with-version>24400</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>640</width>
+        <height>640</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Bkg" sid="314055349912894">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Game_Development\Arts\BomberMan\Sprites\Blocks\BackgroundTile.png" />
+        </object-type>
+        <object-type name="Block" sid="988543988758720">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="245413692203236">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="437371761989568">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="780981825586200" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Blocks\SolidBlock.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="eBlock" sid="785484843677676">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="781560853552553">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="374299135940544">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="485213964166349" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Blocks\ExplodableBlock.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PlayerSp" sid="270395044828627">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="505710911742068">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="8" loop="1" name="Up" pingpong="0" repeatcount="1" repeatto="0" sid="855832925152040" speed="14">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Back\Bman_B_f00.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Back\Bman_B_f01.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Back\Bman_B_f02.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Back\Bman_B_f03.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Back\Bman_B_f04.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Back\Bman_B_f05.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Back\Bman_B_f06.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Back\Bman_B_f07.png" />
+                </animation>
+                <animation framecount="8" loop="1" name="Down" pingpong="0" repeatcount="1" repeatto="0" sid="700939991406347" speed="14">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Front\Bman_F_f00.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Front\Bman_F_f01.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Front\Bman_F_f02.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Front\Bman_F_f03.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Front\Bman_F_f04.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Front\Bman_F_f05.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Front\Bman_F_f06.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Front\Bman_F_f07.png" />
+                </animation>
+                <animation framecount="8" loop="1" name="Right" pingpong="0" repeatcount="1" repeatto="0" sid="494702150457454" speed="14">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Side\Bman_F_f00.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Side\Bman_F_f01.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Side\Bman_F_f02.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Side\Bman_F_f03.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Side\Bman_F_f04.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Side\Bman_F_f05.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Side\Bman_F_f06.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Side\Bman_F_f07.png" />
+                </animation>
+                <animation framecount="8" loop="1" name="Left" pingpong="0" repeatcount="1" repeatto="0" sid="338034039018826" speed="14">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.742188">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Player" sid="399246874840545">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Speed" sid="830405481252230" type="number" />
+                <instance-variable name="Direction" sid="877747011595117" type="number" />
+                <instance-variable name="MoveTime" sid="337621186715628" type="number" />
+                <instance-variable name="Timer" sid="188079359249211" type="number" />
+                <instance-variable name="PlayerID" sid="272967545518449" type="number" />
+                <instance-variable name="Listening" sid="326424994849192" type="boolean" />
+                <instance-variable name="PositionResidualX" sid="751832511968668" type="number" />
+                <instance-variable name="PositionResidualY" sid="344175086570969" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="8Direction" sid="376773566596451">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="184542668615376">
+                    <behavior id="bound" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="537979929053316" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="158798494809954">
+            <plugin id="Keyboard" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="7" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
