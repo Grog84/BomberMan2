@@ -33,6 +33,10 @@
                     <param id="0" name="Instance variable">PositionResidualY</param>
                     <param id="1" name="Value">abs(Self.Y - (int(Self.Y / TILESIZE) * TILESIZE +32))</param>
                 </action>
+                <action id="-11" name="Add to" sid="431266890367891" type="Bomb">
+                    <param id="0" name="Instance variable">Counter</param>
+                    <param id="1" name="Value">dt</param>
+                </action>
             </actions>
         </event-block>
         <event-group description="" sid="976339063184736" title="Player1Control">
@@ -41,6 +45,11 @@
                     <conditions>
                         <condition id="-8" name="Is boolean instance variable set" sid="264967427309101" type="Player">
                             <param id="0" name="Instance variable">Listening</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="642356750573546" type="Player">
+                            <param id="0" name="Instance variable">PlayerID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -166,6 +175,36 @@
                                 <action id="-13" name="Set boolean" sid="824457938976617" type="Player">
                                     <param id="0" name="Instance variable">Listening</param>
                                     <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="878510596784443">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="292535278915034" type="Player">
+                            <param id="0" name="Instance variable">PlayerID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="287899157880972">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="452580603205126" type="Keyboard">
+                                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="876589129593191" type="Player">
+                                    <param id="0" name="Instance variable">BombsNbr</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="643791908669168" type="Function">
+                                    <param id="0" name="Name">&quot;SpawnBomb&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                         </event-block>
@@ -330,7 +369,250 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="506524766462251">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="127719037115434" type="Player">
+                            <param id="0" name="Object">BombBase</param>
+                        </condition>
+                        <condition behavior="Solid" id="0" name="Is enabled" sid="161058895854527" type="BombBase" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="278722657160648" type="Player">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Value">IDLE</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="436218207104682" type="Player">
+                            <param id="0" name="X">int(Self.X/TILESIZE)*TILESIZE + 32</param>
+                            <param id="1" name="Y">int(Self.Y/TILESIZE)*TILESIZE + 32</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="365928843646982" type="Player">
+                            <param id="0" name="Instance variable">Timer</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="706742812984639" title="Bombs">
+            <sub-events>
+                <event-block sid="619646314235224">
+                    <conditions>
+                        <condition id="0" name="On function" sid="772373030528189" type="Function">
+                            <param id="0" name="Name">&quot;CreateExplosions&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="691985083331660">
+                            <conditions>
+                                <condition id="-10" name="For" sid="730913744564740" type="System">
+                                    <param id="0" name="Name">&quot;Range&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="174227597282984" type="System">
+                                    <param id="0" name="Object to create">Flame</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">Bomb.X + (Function.Param(1) * loopindex(&quot;Range&quot;))</param>
+                                    <param id="3" name="Y">Bomb.Y + (Function.Param(2) * loopindex(&quot;Range&quot;))</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="776960504929419">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="730624306964896" type="Flame">
+                                            <param id="0" name="Object">Block</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="921694899175114" type="Flame" />
+                                        <action id="-24" name="Stop loop" sid="988729686562517" type="System" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="464664504873283">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="330205415135959" type="Flame">
+                                            <param id="0" name="Object">eBlock</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-24" name="Stop loop" sid="532241496922374" type="System" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="356365140272109">
+                    <conditions>
+                        <condition id="0" name="On function" sid="133945324841830" type="Function">
+                            <param id="0" name="Name">&quot;SpawnBomb&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="803724454386788" type="System">
+                            <param id="0" name="Object to create">Bomb</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">int(Player.X/TILESIZE)*TILESIZE + 32</param>
+                            <param id="3" name="Y">int(Player.Y/TILESIZE)*TILESIZE + 32</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="171993500413947" type="Bomb">
+                            <param id="0" name="Object">BombBase</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="334920536065910" type="Bomb">
+                            <param id="0" name="Instance variable">BaseUID</param>
+                            <param id="1" name="Value">BombBase.UID</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="138264096205913" type="Player">
+                            <param id="0" name="Instance variable">BombsNbr</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="429310686511866" type="Bomb">
+                            <param id="0" name="Instance variable">Range</param>
+                            <param id="1" name="Value">Player.BombsRange</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="267590661896166" type="Bomb">
+                            <param id="0" name="Instance variable">PlayerUID</param>
+                            <param id="1" name="Value">Player.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="888063344382971">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="286627737382646" type="Bomb">
+                            <param id="0" name="Instance variable">Counter</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="582473909237323" type="Bomb">
+                            <param id="0" name="Object">Flame</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="650856031414539">
+                            <conditions>
+                                <condition id="-10" name="For" sid="736395563398743" type="System">
+                                    <param id="0" name="Name">&quot;FlameDirection&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">4</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="452111100231578">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="607277273807644" type="System">
+                                            <param id="0" name="First value">loopindex(&quot;FlameDirection&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="130217388579309" type="Function">
+                                            <param id="0" name="Name">&quot;CreateExplosions&quot;</param>
+                                            <param id="1" name="Parameter {n}">Bomb.Range{###}TILESIZE{###}0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="597886490922375">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="217749915834234" type="System">
+                                            <param id="0" name="First value">loopindex(&quot;FlameDirection&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="111698424996181" type="Function">
+                                            <param id="0" name="Name">&quot;CreateExplosions&quot;</param>
+                                            <param id="1" name="Parameter {n}">Bomb.Range{###}0{###}TILESIZE</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="541995358100957">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="284652590891929" type="System">
+                                            <param id="0" name="First value">loopindex(&quot;FlameDirection&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="721975156872633" type="Function">
+                                            <param id="0" name="Name">&quot;CreateExplosions&quot;</param>
+                                            <param id="1" name="Parameter {n}">Bomb.Range{###}-TILESIZE{###}0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="681803094974320">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="158828851574458" type="System">
+                                            <param id="0" name="First value">loopindex(&quot;FlameDirection&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="580750899666848" type="Function">
+                                            <param id="0" name="Name">&quot;CreateExplosions&quot;</param>
+                                            <param id="1" name="Parameter {n}">Bomb.Range{###}0{###}-TILESIZE</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="561393395634516">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Destroy" sid="976392309072586" type="Bomb" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="326294699919401">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="765598529143826" type="Bomb" />
+                        <condition id="-14" name="Pick by unique ID" sid="543482697531115" type="Player">
+                            <param id="0" name="Unique ID">Bomb.PlayerUID</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="833723606262182" type="BombBase">
+                            <param id="0" name="Unique ID">Bomb.BaseUID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="823697961272742" type="Player">
+                            <param id="0" name="Instance variable">BombsNbr</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="887179815906680" type="BombBase" />
+                    </actions>
+                </event-block>
+                <event-block sid="484363237216876">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="863620672133560" type="System">
+                            <param id="0" name="Object">BombBase</param>
+                        </condition>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="876729920325373" type="BombBase">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="796410679816670" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="666587781629579" type="BombBase">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="164109153564921" title="Explosions" />
     </events>
 </c2eventsheet>
