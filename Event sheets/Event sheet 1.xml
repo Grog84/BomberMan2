@@ -257,6 +257,10 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-3" name="Set position" sid="298531234400849" type="Player">
+                            <param id="0" name="X">int(Self.X / TILESIZE) * TILESIZE + 32</param>
+                            <param id="1" name="Y">int(Self.Y / TILESIZE) * TILESIZE + 32</param>
+                        </action>
                         <action id="-10" name="Set value" sid="434714374912280" type="Player">
                             <param id="0" name="Instance variable">Direction</param>
                             <param id="1" name="Value">IDLE</param>
@@ -319,6 +323,10 @@
                         <action id="-3" name="Set position" sid="261961484476474" type="Player">
                             <param id="0" name="X">int(Self.X/TILESIZE)*TILESIZE + 32</param>
                             <param id="1" name="Y">int(Self.Y/TILESIZE)*TILESIZE + 32</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="952923051854135" type="Player">
+                            <param id="0" name="Instance variable">Timer</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>
