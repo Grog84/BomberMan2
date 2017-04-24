@@ -15,14 +15,6 @@
                 <condition id="-2" name="On start of layout" sid="194801623004005" type="System" />
             </conditions>
             <actions>
-                <action behavior="Pin" id="0" name="Pin to object" sid="846332775647772" type="PlayerSp">
-                    <param id="0" name="Pin to">Player</param>
-                    <param id="1" name="Mode">1</param>
-                </action>
-                <action behavior="Pin" id="0" name="Pin to object" sid="871448866965039" type="CreepSp">
-                    <param id="0" name="Pin to">Creep</param>
-                    <param id="1" name="Mode">0</param>
-                </action>
                 <action behavior="Pathfinding" id="5" name="Add obstacle" sid="386260017773375" type="Creep">
                     <param id="0" name="Obstacle">Block</param>
                 </action>
@@ -30,7 +22,7 @@
                     <param id="0" name="Obstacle">eBlock</param>
                 </action>
                 <action behavior="Pathfinding" id="5" name="Add obstacle" sid="428284105679028" type="Creep">
-                    <param id="0" name="Obstacle">Bomb</param>
+                    <param id="0" name="Obstacle">BombBase</param>
                 </action>
                 <action id="-10" name="Set value" sid="596046505531462" type="Creep">
                     <param id="0" name="Instance variable">SpriteUID</param>
@@ -48,6 +40,61 @@
                         <action id="0" name="Call function" sid="663553643397022" type="Function">
                             <param id="0" name="Name">&quot;CreepPickDestination&quot;</param>
                             <param id="1" name="Parameter {n}">Creep.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="593795339929134">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="773845069631712" type="System">
+                            <param id="0" name="Object">Creep</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="574118764801389" type="Creep">
+                            <param id="0" name="Object">CreepSp</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="977836250470329" type="Function">
+                            <param id="0" name="Name">&quot;CreepPickDestination&quot;</param>
+                            <param id="1" name="Parameter {n}">Creep.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="871448866965039" type="CreepSp">
+                            <param id="0" name="Pin to">Creep</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="689338654244317">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="368994477950358" type="System">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="446486495395879" type="Player">
+                            <param id="0" name="Object">PlayerSp</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="846332775647772" type="PlayerSp">
+                            <param id="0" name="Pin to">Player</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="770058715617682">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="257221842355306" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="393599498645199" type="Player">
+                            <param id="0" name="Instance variable">PositionResidualX</param>
+                            <param id="1" name="Value">abs(Self.X - (int(Self.X / TILESIZE) * TILESIZE +32))</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="391646223663762" type="Player">
+                            <param id="0" name="Instance variable">PositionResidualY</param>
+                            <param id="1" name="Value">abs(Self.Y - (int(Self.Y / TILESIZE) * TILESIZE +32))</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="506587726807804" type="Bomb">
+                            <param id="0" name="Instance variable">Counter</param>
+                            <param id="1" name="Value">dt</param>
                         </action>
                     </actions>
                 </event-block>
@@ -650,12 +697,16 @@
                         </condition>
                         <condition id="-4" name="Trigger once while true" sid="796410679816670" type="System" />
                     </conditions>
-                    <actions>
-                        <action behavior="Solid" id="0" name="Set enabled" sid="666587781629579" type="BombBase">
-                            <param id="0" name="State">1</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
+                        <event-block sid="869882893419060">
+                            <conditions />
+                            <actions>
+                                <action behavior="Solid" id="0" name="Set enabled" sid="666587781629579" type="BombBase">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="644044101622650">
                             <conditions>
                                 <condition id="-11" name="For Each" sid="841983590923742" type="System">
@@ -835,8 +886,8 @@
             <sub-events>
                 <event-block sid="647062160444376">
                     <conditions>
-                        <condition id="0" name="On collision with another object" sid="702904282297355" type="CreepSp">
-                            <param id="0" name="Object">PlayerSp</param>
+                        <condition id="0" name="On collision with another object" sid="702904282297355" type="Creep">
+                            <param id="0" name="Object">Player</param>
                         </condition>
                         <condition id="-14" name="Pick by unique ID" sid="343080082345460" type="Player">
                             <param id="0" name="Unique ID">PlayerSp.Pin.PinnedUID</param>
@@ -897,6 +948,9 @@
                             </conditions>
                             <actions>
                                 <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" sid="330725620714400" type="Creep" />
+                                <action id="-16" name="Wait" sid="896175554053927" type="System">
+                                    <param id="0" name="Seconds">0.0</param>
+                                </action>
                                 <action behavior="Pathfinding" id="0" name="Find path" sid="574611206420542" type="Creep">
                                     <param id="0" name="X">Creep.CurrentDestX</param>
                                     <param id="1" name="Y">Creep.CurrentDestY</param>

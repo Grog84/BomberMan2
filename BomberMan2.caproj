@@ -404,6 +404,9 @@
                 <behavior-type name="Solid" sid="683243883283156">
                     <behavior id="solid" />
                 </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="939658025681774">
+                    <behavior id="destroy" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="118016989468626" speed="6">
