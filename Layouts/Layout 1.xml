@@ -1455,7 +1455,7 @@
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
-                        <opacity>0</opacity>
+                        <opacity>0.5</opacity>
                     </world>
                 </instance>
                 <instance type="CreepSp" uid="50">
@@ -3069,7 +3069,7 @@
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
-                        <opacity>0</opacity>
+                        <opacity>0.5</opacity>
                     </world>
                 </instance>
                 <instance type="Creep" uid="107">
@@ -3123,7 +3123,7 @@
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
-                        <opacity>0</opacity>
+                        <opacity>0.5</opacity>
                     </world>
                 </instance>
             </instances>
@@ -3164,6 +3164,7 @@
                         <BombsNbr>2</BombsNbr>
                         <BombsRange>1</BombsRange>
                         <SpriteUID>0</SpriteUID>
+                        <NextDirection>-1</NextDirection>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3189,11 +3190,11 @@
                         <x>96</x>
                         <y>160</y>
                         <z>0</z>
-                        <width>62</width>
-                        <height>62</height>
+                        <width>61</width>
+                        <height>61</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.508196712</hotspotX>
+                        <hotspotY>0.508196712</hotspotY>
                         <angle>0</angle>
                         <opacity>0.5</opacity>
                     </world>
@@ -3217,6 +3218,7 @@
                         <BombsNbr>2</BombsNbr>
                         <BombsRange>1</BombsRange>
                         <SpriteUID>0</SpriteUID>
+                        <NextDirection>-1</NextDirection>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -3242,11 +3244,11 @@
                         <x>544</x>
                         <y>544</y>
                         <z>0</z>
-                        <width>62</width>
-                        <height>62</height>
+                        <width>61</width>
+                        <height>61</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.508196712</hotspotX>
+                        <hotspotY>0.508196712</hotspotY>
                         <angle>0</angle>
                         <opacity>0.5</opacity>
                     </world>

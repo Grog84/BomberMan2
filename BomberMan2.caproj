@@ -382,6 +382,7 @@
                 <instance-variable name="BombsNbr" sid="497577202783489" type="number" />
                 <instance-variable name="BombsRange" sid="223492938972049" type="number" />
                 <instance-variable name="SpriteUID" sid="453374078847818" type="number" />
+                <instance-variable name="NextDirection" sid="256044971608008" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="376773566596451">
@@ -393,7 +394,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="537979929053316" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.508197" hotspotY="0.508197" />
                 </animation>
             </animation-folder>
         </object-type>
