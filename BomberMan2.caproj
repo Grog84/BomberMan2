@@ -24,7 +24,9 @@
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
-    <used-effects />
+    <used-effects>
+        <effect author="Scirra" id="replacecolor">Replace color</effect>
+    </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -94,6 +96,11 @@
                     <behavior id="Pin" />
                 </behavior-type>
             </behaviors>
+            <effects>
+                <effect-type name="ReplaceColor">
+                    <effect id="replacecolor" />
+                </effect-type>
+            </effects>
             <animation-folder>
                 <animation framecount="8" loop="1" name="Up" pingpong="0" repeatcount="1" repeatto="0" sid="855832925152040" speed="14">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.742188" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Bomberman\Back\Bman_B_f00.png">
@@ -374,6 +381,7 @@
                 <instance-variable name="PositionResidualY" sid="344175086570969" type="number" />
                 <instance-variable name="BombsNbr" sid="497577202783489" type="number" />
                 <instance-variable name="BombsRange" sid="223492938972049" type="number" />
+                <instance-variable name="SpriteUID" sid="453374078847818" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="376773566596451">
@@ -593,6 +601,11 @@
         </object-type>
         <object-type name="Destination" sid="116154654534866">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="364494366712508">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="239176769299447" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
