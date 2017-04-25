@@ -497,6 +497,10 @@
                             <param id="0" name="Instance variable">Direction</param>
                             <param id="1" name="Value">IDLE</param>
                         </action>
+                        <action id="-10" name="Set value" sid="709224527662834" type="Player">
+                            <param id="0" name="Instance variable">NextDirection</param>
+                            <param id="1" name="Value">IDLE</param>
+                        </action>
                         <action id="-3" name="Set position" sid="261961484476474" type="Player">
                             <param id="0" name="X">int(Self.X/TILESIZE)*TILESIZE + 32</param>
                             <param id="1" name="Y">int(Self.Y/TILESIZE)*TILESIZE + 32</param>
@@ -794,6 +798,10 @@
                         <condition id="1" name="Is overlapping another object" sid="275819525295866" type="Flame">
                             <param id="0" name="Object">Bomb</param>
                         </condition>
+                        <condition id="-10" name="Compare opacity" sid="838930794631901" type="Flame">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Opacity">50</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-10" name="Set value" sid="661085150704641" type="Bomb">
@@ -807,6 +815,10 @@
                         <condition id="1" name="Is overlapping another object" sid="554070790414562" type="Flame">
                             <param id="0" name="Object">Creep</param>
                         </condition>
+                        <condition id="-10" name="Compare opacity" sid="718411279161325" type="Flame">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Opacity">50</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="172748430969923" type="Creep" />
@@ -816,6 +828,10 @@
                     <conditions>
                         <condition id="1" name="Is overlapping another object" sid="215792662762344" type="Flame">
                             <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="-10" name="Compare opacity" sid="351758204930729" type="Flame">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Opacity">50</param>
                         </condition>
                     </conditions>
                     <actions>
