@@ -462,6 +462,56 @@
             </effects>
             <texture />
         </object-type>
+        <object-type name="1Play" sid="446518643870980">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="420037249023656" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0.513514" original-source="C:\Game_Development\Arts\BomberMan\1Player_y.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.513514" original-source="C:\Game_Development\Arts\BomberMan\1Player_r.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="2Play" sid="736305379928697">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="108287579337712" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0.513514" original-source="C:\Game_Development\Arts\BomberMan\2Players_y.png">
+                        <collision-poly>
+                            <point x="0.00623053" y="0.0540541" />
+                            <point x="0.996885" y="0.0540541" />
+                            <point x="0.996885" y="0.918919" />
+                            <point x="0.00311526" y="0.945946" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0.513514" original-source="C:\Game_Development\Arts\BomberMan\2Players_r.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Arrow" sid="890576792881214">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="854336877174841" speed="5">
+                    <frame duration="1" hotspotX="0.684211" hotspotY="0.518519" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BombDrawing" sid="765489247166194">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="FinalWidth" sid="237863668198223" type="number" />
+                <instance-variable name="FinalHeight" sid="362798044362847" type="number" />
+                <instance-variable name="BounceTime" sid="435686879185777" type="number" />
+                <instance-variable name="b" sid="176314804125234" type="number" />
+                <instance-variable name="c" sid="319619159064355" type="number" />
+                <instance-variable name="d" sid="416673149409696" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="128760737368316" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502392" original-source="C:\Game_Development\Arts\BomberMan\bomberman_1Player.jpg" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503704" original-source="C:\Game_Development\Arts\BomberMan\bomberman_2Players.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>

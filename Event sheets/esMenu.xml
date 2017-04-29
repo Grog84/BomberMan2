@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>esMenu</name>
     <events>
+        <variable constant="1" name="1PLAY_Y" sid="531475219011791" static="0" type="number">356</variable>
+        <variable constant="1" name="2PLAY_Y" sid="946043914690522" static="0" type="number">445</variable>
         <variable constant="0" name="TriggerDoubleGlow" sid="188115344844580" static="0" type="number">0</variable>
         <variable constant="0" name="TriggerFinalGlow" sid="651648805527345" static="0" type="number">0</variable>
         <variable constant="0" name="FadeRatio" sid="314421951208613" static="0" type="number">0</variable>
@@ -189,9 +191,14 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="273797131532955" type="Function">
-                            <param id="0" name="Name">&quot;SizeVariation&quot;</param>
-                            <param id="1" name="Parameter {n}">Glow.UID</param>
+                        <action behavior="Sine" id="0" name="Set active" sid="980655876964347" type="BombermanTitle">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Sine2" id="0" name="Set active" sid="254060658339097" type="BombermanTitle">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Sine3" id="0" name="Set active" sid="549468684028054" type="BombermanTitle">
+                            <param id="0" name="State">1</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -346,23 +353,64 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="761030105954216">
+        <event-group description="" sid="334925500363121" title="Selection">
+            <sub-events>
+                <event-block sid="622491891575280">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="379345882539676" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="933574665315574" type="Arrow">
+                            <param id="0" name="Comparison">1</param>
+                            <param id="1" name="Y co-ordinate">2PLAY_Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="843415360343097" type="Arrow">
+                            <param id="0" name="Y">2PLAY_Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="960876315756423">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="311417440351690" type="Keyboard">
+                            <param id="0" name="Key">38 (Up arrow)</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="522531958809828" type="Arrow">
+                            <param id="0" name="Comparison">1</param>
+                            <param id="1" name="Y co-ordinate">1PLAY_Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="796922612492180" type="Arrow">
+                            <param id="0" name="Y">1PLAY_Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <variable constant="0" name="ts" sid="321968093800929" static="0" type="number">0</variable>
+        <variable constant="0" name="tc" sid="242352860092884" static="0" type="number">0</variable>
+        <event-block sid="122917445332519">
             <conditions>
-                <condition id="-17" name="Compare opacity" sid="120445246610150" type="System">
-                    <param id="0" name="Layer">&quot;Glow&quot;</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Opacity">0</param>
+                <condition id="0" name="On function" sid="325133367490332" type="Function">
+                    <param id="0" name="Name">&quot;BounceDrawing&quot;</param>
                 </condition>
             </conditions>
             <actions>
-                <action behavior="Sine" id="0" name="Set active" sid="980655876964347" type="BombermanTitle">
-                    <param id="0" name="State">1</param>
+                <action id="-9" name="Set value" sid="374129724497640" type="System">
+                    <param id="0" name="Variable">ts</param>
+                    <param id="1" name="Value">BombDrawing.BounceTime / BombDrawing.BounceTime</param>
                 </action>
-                <action behavior="Sine2" id="0" name="Set active" sid="254060658339097" type="BombermanTitle">
-                    <param id="0" name="State">1</param>
+                <action id="-9" name="Set value" sid="216309451209301" type="System">
+                    <param id="0" name="Variable">tc</param>
+                    <param id="1" name="Value">ts*BombDrawing.BounceTime</param>
                 </action>
-                <action behavior="Sine3" id="0" name="Set active" sid="549468684028054" type="BombermanTitle">
-                    <param id="0" name="State">1</param>
+                <action id="-6" name="Set height" sid="193218379942348" type="BombDrawing">
+                    <param id="0" name="Height">BombDrawing.b + BombDrawing.c*(68.3*tc*ts - 196*ts*ts+206*tc -96*ts + 18.5*BombDrawing.BounceTime)</param>
+                </action>
+                <action id="-5" name="Set width" sid="298270910044354" type="BombDrawing">
+                    <param id="0" name="Width">BombDrawing.b + BombDrawing.c*(68.3*tc*ts - 196*ts*ts+206*tc -96*ts + 18.5*BombDrawing.BounceTime)</param>
                 </action>
             </actions>
         </event-block>
