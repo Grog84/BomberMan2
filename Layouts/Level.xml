@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>Layout 1</name>
+    <name>Level</name>
     <sid>903392067175328</sid>
-    <event-sheet>Event sheet 1</event-sheet>
+    <event-sheet>esLevel</event-sheet>
     <size>
         <width>640</width>
         <height>640</height>
@@ -1417,17 +1417,6 @@
                         <SpriteUID>0</SpriteUID>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="8Direction">
-                            <properties>
-                                <max-speed>50</max-speed>
-                                <acceleration>600</acceleration>
-                                <deceleration>500</deceleration>
-                                <directions>4 directions</directions>
-                                <set-angle>No</set-angle>
-                                <default-controls>Yes</default-controls>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
                         <behavior-instance type="Pathfinding">
                             <properties>
                                 <cell-size>64</cell-size>
@@ -1455,7 +1444,7 @@
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
-                        <opacity>0.5</opacity>
+                        <opacity>0</opacity>
                     </world>
                 </instance>
                 <instance type="CreepSp" uid="50">
@@ -1474,11 +1463,11 @@
                         <x>288</x>
                         <y>352</y>
                         <z>0</z>
-                        <width>64</width>
-                        <height>64</height>
+                        <width>36</width>
+                        <height>38</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotY>0.631578922</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -2984,11 +2973,11 @@
                         <x>416</x>
                         <y>224</y>
                         <z>0</z>
-                        <width>64</width>
-                        <height>64</height>
+                        <width>36</width>
+                        <height>38</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotY>0.631578922</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -3009,11 +2998,11 @@
                         <x>224</x>
                         <y>224</y>
                         <z>0</z>
-                        <width>64</width>
-                        <height>64</height>
+                        <width>36</width>
+                        <height>38</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotY>0.631578922</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -3031,17 +3020,6 @@
                         <SpriteUID>0</SpriteUID>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="8Direction">
-                            <properties>
-                                <max-speed>50</max-speed>
-                                <acceleration>600</acceleration>
-                                <deceleration>500</deceleration>
-                                <directions>4 directions</directions>
-                                <set-angle>No</set-angle>
-                                <default-controls>Yes</default-controls>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
                         <behavior-instance type="Pathfinding">
                             <properties>
                                 <cell-size>64</cell-size>
@@ -3069,7 +3047,7 @@
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
-                        <opacity>0.5</opacity>
+                        <opacity>0</opacity>
                     </world>
                 </instance>
                 <instance type="Creep" uid="107">
@@ -3085,17 +3063,6 @@
                         <SpriteUID>0</SpriteUID>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="8Direction">
-                            <properties>
-                                <max-speed>50</max-speed>
-                                <acceleration>600</acceleration>
-                                <deceleration>500</deceleration>
-                                <directions>4 directions</directions>
-                                <set-angle>No</set-angle>
-                                <default-controls>Yes</default-controls>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
                         <behavior-instance type="Pathfinding">
                             <properties>
                                 <cell-size>64</cell-size>
@@ -3123,7 +3090,7 @@
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
-                        <opacity>0.5</opacity>
+                        <opacity>0</opacity>
                     </world>
                 </instance>
                 <instance type="CreepSp" uid="108">
@@ -3142,11 +3109,11 @@
                         <x>544</x>
                         <y>544</y>
                         <z>0</z>
-                        <width>64</width>
-                        <height>64</height>
+                        <width>36</width>
+                        <height>38</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotY>0.631578922</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -3164,17 +3131,6 @@
                         <SpriteUID>0</SpriteUID>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="8Direction">
-                            <properties>
-                                <max-speed>50</max-speed>
-                                <acceleration>600</acceleration>
-                                <deceleration>500</deceleration>
-                                <directions>4 directions</directions>
-                                <set-angle>No</set-angle>
-                                <default-controls>Yes</default-controls>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
                         <behavior-instance type="Pathfinding">
                             <properties>
                                 <cell-size>64</cell-size>
@@ -3202,7 +3158,7 @@
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
-                        <opacity>0.5</opacity>
+                        <opacity>0</opacity>
                     </world>
                 </instance>
                 <instance type="CreepSp" uid="110">
@@ -3221,11 +3177,11 @@
                         <x>96</x>
                         <y>544</y>
                         <z>0</z>
-                        <width>64</width>
-                        <height>64</height>
+                        <width>36</width>
+                        <height>38</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotY>0.631578922</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -3243,17 +3199,6 @@
                         <SpriteUID>0</SpriteUID>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="8Direction">
-                            <properties>
-                                <max-speed>50</max-speed>
-                                <acceleration>600</acceleration>
-                                <deceleration>500</deceleration>
-                                <directions>4 directions</directions>
-                                <set-angle>No</set-angle>
-                                <default-controls>Yes</default-controls>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
                         <behavior-instance type="Pathfinding">
                             <properties>
                                 <cell-size>64</cell-size>
@@ -3281,7 +3226,7 @@
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
-                        <opacity>0.5</opacity>
+                        <opacity>0</opacity>
                     </world>
                 </instance>
                 <instance type="Destination" uid="112">
@@ -3404,7 +3349,7 @@
                         <hotspotX>0.508196712</hotspotX>
                         <hotspotY>0.508196712</hotspotY>
                         <angle>0</angle>
-                        <opacity>0.5</opacity>
+                        <opacity>0</opacity>
                     </world>
                 </instance>
             </instances>
@@ -3455,11 +3400,11 @@
                         <x>96</x>
                         <y>160</y>
                         <z>0</z>
-                        <width>64</width>
-                        <height>128</height>
+                        <width>42</width>
+                        <height>64</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.7421875</hotspotY>
+                        <hotspotY>0.625</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

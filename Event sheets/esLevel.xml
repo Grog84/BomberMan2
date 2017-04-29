@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>Event sheet 1</name>
+    <name>esLevel</name>
     <events>
         <variable constant="1" name="BOMB_TIMER" sid="896999325270146" static="0" type="number">3</variable>
         <variable constant="1" name="TILESIZE" sid="290097279039753" static="0" type="number">64</variable>

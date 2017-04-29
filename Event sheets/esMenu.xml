@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>esMenu</name>
+    <events>
+        <variable constant="0" name="TriggerDoubleGlow" sid="188115344844580" static="0" type="number">0</variable>
+        <variable constant="0" name="TriggerFinalGlow" sid="651648805527345" static="0" type="number">0</variable>
+        <variable constant="0" name="FadeRatio" sid="314421951208613" static="0" type="number">0</variable>
+        <variable constant="0" name="SizeRatio" sid="837729772518656" static="0" type="number">0</variable>
+        <event-block sid="521059970018171">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="273372698545089" type="System" />
+                <condition id="-7" name="Compare instance variable" sid="883609876802294" type="Glow">
+                    <param id="0" name="Instance variable">ID</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="736668903699577" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action behavior="CustomMovement" id="2" name="Set speed" sid="799708882036106" type="Glow">
+                    <param id="0" name="Which">1</param>
+                    <param id="1" name="Speed">500</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="581575877513370">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="831770863547977" type="Glow">
+                    <param id="0" name="Instance variable">ID</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-1" name="Compare X" sid="754948490749570" type="Glow">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="X co-ordinate">GlowAttractionPoint.X</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="530564392828647" type="GlowAttractionPoint">
+                    <param id="0" name="Instance variable">ID</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="CustomMovement" id="1" name="Reverse" sid="515584511871473" type="Glow">
+                    <param id="0" name="Axes">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="148220802105005">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="464576213192533" type="Glow">
+                    <param id="0" name="Instance variable">ID</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="792770001382165" type="GlowAttractionPoint">
+                    <param id="0" name="Instance variable">ID</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="805710327502073">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="512873548357128" type="Glow">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="X co-ordinate">GlowAttractionPoint.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="CustomMovement" id="0" name="Stop" sid="799518840173276" type="Glow" />
+                        <action id="-16" name="Set opacity" sid="148859676471410" type="Glow">
+                            <param id="0" name="Opacity">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="281884408328643" type="Glow">
+                            <param id="0" name="X">320</param>
+                            <param id="1" name="Y">320</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="554384271455983" type="System">
+                            <param id="0" name="Variable">TriggerDoubleGlow</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="849104765530072">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="790551556681063" type="Glow">
+                    <param id="0" name="Instance variable">ID</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="730910413680382" type="Glow">
+                    <param id="0" name="Instance variable">ID</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="251122263824383">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="696947212564767" type="System">
+                            <param id="0" name="Variable">TriggerDoubleGlow</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="CustomMovement" id="5" name="Accelerate toward position" sid="311339732574383" type="Glow">
+                            <param id="0" name="Acceleration">300</param>
+                            <param id="1" name="X">320</param>
+                            <param id="2" name="Y">320</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="131111524701424">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="582893008542613" type="Glow">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">320</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="CustomMovement" id="5" name="Accelerate toward position" sid="540902498585108" type="Glow">
+                            <param id="0" name="Acceleration">-150</param>
+                            <param id="1" name="X">320</param>
+                            <param id="2" name="Y">320</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="661531149879546">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="908578292583337" type="Glow" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="288759053898868" type="System">
+                            <param id="0" name="Variable">TriggerFinalGlow</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="753244252671626" type="Glow" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="276336656483310">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="663492685686816" type="System">
+                    <param id="0" name="Variable">TriggerFinalGlow</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="858239451398802">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="118783741366227" type="Glow">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-10" name="Compare opacity" sid="616235995851737" type="Glow">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Opacity">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="498513022221195" type="Function">
+                            <param id="0" name="Name">&quot;FadeInGlow&quot;</param>
+                            <param id="1" name="Parameter {n}">Glow.UID</param>
+                        </action>
+                        <action id="0" name="Call function" sid="510895415719795" type="Function">
+                            <param id="0" name="Name">&quot;SizeVariation&quot;</param>
+                            <param id="1" name="Parameter {n}">Glow.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="423359146914411">
+                    <conditions>
+                        <condition id="-10" name="Compare opacity" sid="737469655869522" type="Glow">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Opacity">80</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="273797131532955" type="Function">
+                            <param id="0" name="Name">&quot;SizeVariation&quot;</param>
+                            <param id="1" name="Parameter {n}">Glow.UID</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="653506172651925">
+                            <conditions>
+                                <condition id="-23" name="While" sid="242721797055632" type="System" />
+                                <condition id="-8" name="Compare two values" sid="992921944541801" type="System">
+                                    <param id="0" name="First value">LayerOpacity(&quot;Glow&quot;)</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Set layer opacity" sid="403235152993011" type="System">
+                                    <param id="0" name="Layer">&quot;Glow&quot;</param>
+                                    <param id="1" name="Opacity">LayerOpacity(&quot;Glow&quot;) - 1.0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="290261526366501" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="869980379544170">
+            <conditions>
+                <condition id="0" name="On function" sid="441835375969240" type="Function">
+                    <param id="0" name="Name">&quot;FadeInGlow&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="209128291318750">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="755050601596365" type="Glow">
+                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="130587994850857" type="System">
+                            <param id="0" name="Variable">FadeRatio</param>
+                            <param id="1" name="Value">Glow.FadeTime / Glow.FadeDuration</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="314907742121882">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="751690320335703" type="System">
+                                    <param id="0" name="Variable">FadeRatio</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="313418918360235" type="Glow">
+                                    <param id="0" name="Opacity">(2.0 * (Glow.FadeTime^2)) * 100.0</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="956038650361848" type="Glow">
+                                    <param id="0" name="Instance variable">FadeTime</param>
+                                    <param id="1" name="Value">dt</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="972036916628849">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="819420867974412" type="System">
+                                    <param id="0" name="Variable">FadeRatio</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="123373113900673" type="Glow">
+                                    <param id="0" name="Opacity">(1.0 - (2.0 * (Glow.FadeTime - 1.0)^2)) * 100.0</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="704778578890817" type="Glow">
+                                    <param id="0" name="Instance variable">FadeTime</param>
+                                    <param id="1" name="Value">dt</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="886678430451683">
+            <conditions>
+                <condition id="0" name="On function" sid="489907044798467" type="Function">
+                    <param id="0" name="Name">&quot;SizeVariation&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="926840443173148">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="767449717930804" type="Glow">
+                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="567954825044191" type="System">
+                            <param id="0" name="Variable">SizeRatio</param>
+                            <param id="1" name="Value">Glow.SizeTime / Glow.SizeDuration</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="811743902935605">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="668566174527098" type="System">
+                                    <param id="0" name="Variable">SizeRatio</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="599100300923717" type="Glow">
+                                    <param id="0" name="Width">(2.0 * (Glow.SizeTime^2)) * 700.0</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="388649909311719" type="Glow">
+                                    <param id="0" name="Height">(2.0 * (Glow.SizeTime^2)) * 700.0</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="807850203587073" type="Glow">
+                                    <param id="0" name="Instance variable">SizeTime</param>
+                                    <param id="1" name="Value">dt</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="451732909644709">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="700101564106796" type="System">
+                                    <param id="0" name="Variable">SizeRatio</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="569742030330142" type="Glow">
+                                    <param id="0" name="Width">250.0 + (1.0 - (2.0 * (Glow.SizeTime - 1.0)^2)) * 900.0</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="799423570910696" type="Glow">
+                                    <param id="0" name="Height">250.0 + (1.0 - (2.0 * (Glow.SizeTime - 1.0)^2)) * 900.0</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="404884136015600" type="Glow">
+                                    <param id="0" name="Instance variable">SizeTime</param>
+                                    <param id="1" name="Value">dt</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="761030105954216">
+            <conditions>
+                <condition id="-17" name="Compare opacity" sid="120445246610150" type="System">
+                    <param id="0" name="Layer">&quot;Glow&quot;</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Opacity">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Sine" id="0" name="Set active" sid="980655876964347" type="BombermanTitle">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Sine2" id="0" name="Set active" sid="254060658339097" type="BombermanTitle">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Sine3" id="0" name="Set active" sid="549468684028054" type="BombermanTitle">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
