@@ -355,6 +355,160 @@
         </event-block>
         <event-group description="" sid="334925500363121" title="Selection">
             <sub-events>
+                <event-block sid="696018865973177">
+                    <conditions>
+                        <condition id="0" name="On function" sid="748175532693695" type="Function">
+                            <param id="0" name="Name">&quot;DrawingPopUp&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="TimeRatio" sid="331689929764942" static="0" type="number">0</variable>
+                        <event-block sid="775676726434181">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="793504608411313" type="System">
+                                    <param id="0" name="Variable">TimeRatio</param>
+                                    <param id="1" name="Value">BombDrawing.PopUpTime/BombDrawing.PopUpDuration</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="693572726756045" type="BombDrawing">
+                                    <param id="0" name="Width">(TimeRatio*TimeRatio)*Self.FinalWidth</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="300588650335874" type="BombDrawing">
+                                    <param id="0" name="Height">(TimeRatio*TimeRatio)*Self.FinalHeight</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="852732173957145" type="BombDrawing">
+                                    <param id="0" name="Instance variable">PopUpTime</param>
+                                    <param id="1" name="Value">dt</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="503241996356961">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="203332988176187" type="Arrow">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Y co-ordinate">1PLAY_Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="545527600997483" type="1Play">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="335609931913190">
+                            <conditions>
+                                <condition id="-5" name="Compare width" sid="929119912131118" type="BombDrawing">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Width">Self.FinalWidth</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="671629600012175" type="Function">
+                                    <param id="0" name="Name">&quot;DrawingPopUp&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="205933184272307">
+                            <conditions>
+                                <condition id="-5" name="Compare width" sid="551644158948069" type="BombDrawing">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="Width">Self.FinalWidth</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="357862168358212" type="BombDrawing">
+                                    <param id="0" name="Width">BombDrawing.FinalWidth</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="993305369295723" type="BombDrawing">
+                                    <param id="0" name="Height">BombDrawing.FinalHeight</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="553113682029402" type="BombDrawing">
+                                    <param id="0" name="Instance variable">PopUpTime</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="714890196415019">
+                    <conditions>
+                        <condition id="-2" inverted="1" name="Compare Y" sid="658274419657710" type="Arrow">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Y co-ordinate">1PLAY_Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="360320297791632" type="1Play">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="914185397025054">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="722514342015061" type="Arrow">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Y co-ordinate">2PLAY_Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="495782215841777" type="2Play">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="188272450952248">
+                            <conditions>
+                                <condition id="-5" name="Compare width" sid="329390229488860" type="BombDrawing">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Width">Self.FinalWidth</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="664098798680787" type="Function">
+                                    <param id="0" name="Name">&quot;DrawingPopUp&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="716206168963864">
+                            <conditions>
+                                <condition id="-5" name="Compare width" sid="897700319166163" type="BombDrawing">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="Width">Self.FinalWidth</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="587218932763769" type="BombDrawing">
+                                    <param id="0" name="Width">BombDrawing.FinalWidth</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="498648299407014" type="BombDrawing">
+                                    <param id="0" name="Height">BombDrawing.FinalHeight</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="895551884251052" type="BombDrawing">
+                                    <param id="0" name="Instance variable">PopUpTime</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="380368251749240">
+                    <conditions>
+                        <condition id="-2" inverted="1" name="Compare Y" sid="811381730906979" type="Arrow">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Y co-ordinate">2PLAY_Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="769420917848315" type="2Play">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="622491891575280">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="379345882539676" type="Keyboard">
@@ -368,6 +522,19 @@
                     <actions>
                         <action id="-2" name="Set Y" sid="843415360343097" type="Arrow">
                             <param id="0" name="Y">2PLAY_Y</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="791009838176434" type="BombDrawing">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="703072440452069" type="BombDrawing">
+                            <param id="0" name="Width">0</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="705711660828952" type="BombDrawing">
+                            <param id="0" name="Height">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="760229250509281" type="BombDrawing">
+                            <param id="0" name="Instance variable">FinalHeight</param>
+                            <param id="1" name="Value">135</param>
                         </action>
                     </actions>
                 </event-block>
@@ -385,34 +552,70 @@
                         <action id="-2" name="Set Y" sid="796922612492180" type="Arrow">
                             <param id="0" name="Y">1PLAY_Y</param>
                         </action>
+                        <action id="5" name="Set frame" sid="755289424773559" type="BombDrawing">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="271002523223035" type="BombDrawing">
+                            <param id="0" name="Width">0</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="357386010710607" type="BombDrawing">
+                            <param id="0" name="Height">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="389512497522092" type="BombDrawing">
+                            <param id="0" name="Instance variable">FinalHeight</param>
+                            <param id="1" name="Value">209</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <variable constant="0" name="ts" sid="321968093800929" static="0" type="number">0</variable>
-        <variable constant="0" name="tc" sid="242352860092884" static="0" type="number">0</variable>
-        <event-block sid="122917445332519">
+        <event-block sid="647864694221797">
             <conditions>
-                <condition id="0" name="On function" sid="325133367490332" type="Function">
-                    <param id="0" name="Name">&quot;BounceDrawing&quot;</param>
-                </condition>
+                <condition id="1" name="On any key pressed" sid="798076294363458" type="Keyboard" />
             </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="374129724497640" type="System">
-                    <param id="0" name="Variable">ts</param>
-                    <param id="1" name="Value">BombDrawing.BounceTime / BombDrawing.BounceTime</param>
-                </action>
-                <action id="-9" name="Set value" sid="216309451209301" type="System">
-                    <param id="0" name="Variable">tc</param>
-                    <param id="1" name="Value">ts*BombDrawing.BounceTime</param>
-                </action>
-                <action id="-6" name="Set height" sid="193218379942348" type="BombDrawing">
-                    <param id="0" name="Height">BombDrawing.b + BombDrawing.c*(68.3*tc*ts - 196*ts*ts+206*tc -96*ts + 18.5*BombDrawing.BounceTime)</param>
-                </action>
-                <action id="-5" name="Set width" sid="298270910044354" type="BombDrawing">
-                    <param id="0" name="Width">BombDrawing.b + BombDrawing.c*(68.3*tc*ts - 196*ts*ts+206*tc -96*ts + 18.5*BombDrawing.BounceTime)</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="655454460313908">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="268632773682483" type="Glow">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="CustomMovement" id="0" name="Stop" sid="751606703043703" type="Glow" />
+                        <action id="-16" name="Set opacity" sid="981771072265268" type="Glow">
+                            <param id="0" name="Opacity">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="291099571864118" type="Glow">
+                            <param id="0" name="X">320</param>
+                            <param id="1" name="Y">320</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="558478946262475">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="193049922718146" type="Glow">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="620148462783979" type="Glow">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="780300880674370" type="System">
+                            <param id="0" name="Variable">TriggerFinalGlow</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="201064253121735" type="Glow" />
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>
