@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>esLevel</name>
     <events>
+        <variable constant="0" name="Players" sid="315580871792889" static="0" type="number">2</variable>
         <variable constant="1" name="BOMB_TIMER" sid="896999325270146" static="0" type="number">3</variable>
         <variable constant="1" name="TILESIZE" sid="290097279039753" static="0" type="number">64</variable>
         <variable constant="1" name="IDLE" sid="284248300624211" static="0" type="number">-1</variable>
@@ -81,6 +82,56 @@
                             <param id="0" name="Instance variable">SpriteUID</param>
                             <param id="1" name="Value">PlayerSp.UID</param>
                         </action>
+                    </actions>
+                </event-block>
+                <event-block sid="849905822516751">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="903900879585849" type="System">
+                            <param id="0" name="Variable">Players</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="215762008560925" type="PIcon">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="290287540215131" type="System">
+                            <param id="0" name="Group name">&quot;Player2Controls&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="686749025691226" type="PIcon">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="154207626981919">
+                    <conditions>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="743112655614731" type="System">
+                            <param id="0" name="Variable">Players</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="177199863208383" type="Player">
+                            <param id="0" name="Instance variable">PlayerID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="694074085015327" type="PIcon">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="656854046560222" type="BaseHud">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="355224806435700" type="Player" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -347,6 +398,9 @@
                         <condition id="-14" name="Pick by unique ID" sid="727790253244399" type="PlayerSp">
                             <param id="0" name="Unique ID">Player.SpriteUID</param>
                         </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="275499410429571" type="Player">
+                            <param id="0" name="Instance variable">Immune</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-10" name="Set value" sid="796639875432427" type="Player">
@@ -361,7 +415,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="726217271866722" title="Player2Controls">
+        <event-group description="" inactive="1" sid="726217271866722" title="Player2Controls">
             <sub-events>
                 <event-block sid="182532894750206">
                     <conditions>
@@ -582,6 +636,9 @@
                         <condition id="-14" name="Pick by unique ID" sid="526025755207861" type="PlayerSp">
                             <param id="0" name="Unique ID">Player.SpriteUID</param>
                         </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="596543179945617" type="Player">
+                            <param id="0" name="Instance variable">Immune</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-10" name="Set value" sid="686740235858929" type="Player">
@@ -706,6 +763,9 @@
                             <param id="1" name="Comparison">2</param>
                             <param id="2" name="Value">3</param>
                         </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="674752804470311" type="Player">
+                            <param id="0" name="Instance variable">Immune</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-13" name="Set boolean" sid="689497670237286" type="Player">
@@ -763,6 +823,43 @@
                             <param id="1" name="Value">0</param>
                         </action>
                     </actions>
+                </event-block>
+                <event-block sid="547904249363612">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="664364562112365" type="System">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="709166818916378">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="144637997922525" type="Player">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="737111542560696" type="PlayerSp">
+                                    <param id="0" name="Unique ID">Player.SpriteUID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="884022957294993" type="Function">
+                                    <param id="0" name="Name">&quot;StartDeathAnimation&quot;</param>
+                                    <param id="1" name="Parameter {n}">Player.UID{###}PlayerSp.UID</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="987159579236987" type="PlayerSp">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">2.0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="784060083977220" type="System">
+                                    <param id="0" name="Seconds">2.0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="206668511753464" type="Player" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -1058,20 +1155,6 @@
                         <action id="-9" name="Destroy" sid="172748430969923" type="Creep" />
                     </actions>
                 </event-block>
-                <event-block sid="559952320034566">
-                    <conditions>
-                        <condition id="1" name="Is overlapping another object" sid="215792662762344" type="Flame">
-                            <param id="0" name="Object">Player</param>
-                        </condition>
-                        <condition id="-10" name="Compare opacity" sid="351758204930729" type="Flame">
-                            <param id="0" name="Comparison">5</param>
-                            <param id="1" name="Opacity">50</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="652219775583884" type="Player" />
-                    </actions>
-                </event-block>
                 <event-block sid="452422598362750">
                     <conditions>
                         <condition id="1" name="Is overlapping another object" sid="567430798456248" type="Flame">
@@ -1084,6 +1167,37 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="814168707179720" type="Powerup" />
+                    </actions>
+                </event-block>
+                <event-block sid="463215367210096">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="473465612604585" type="Flame">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="-10" name="Compare opacity" sid="363727444910815" type="Flame">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Opacity">50</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="635489430330766" type="Player">
+                            <param id="0" name="Instance variable">Immune</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="559510294042430" type="Player">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="338342032187152" type="Function">
+                            <param id="0" name="Name">&quot;StartDeathAnimation&quot;</param>
+                            <param id="1" name="Parameter {n}">Player.UID{###}Player.SpriteUID</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="722287463115266" type="System">
+                            <param id="0" name="Seconds">2.0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="146082441146450" type="Function">
+                            <param id="0" name="Name">&quot;MoveToInitialPosition&quot;</param>
+                            <param id="1" name="Parameter {n}">Player.UID{###}Player.SpriteUID</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -1211,10 +1325,40 @@
                         <condition id="-14" name="Pick by unique ID" sid="343080082345460" type="Player">
                             <param id="0" name="Unique ID">PlayerSp.Pin.PinnedUID</param>
                         </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="240424414500887" type="Player">
+                            <param id="0" name="Instance variable">Immune</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="755477007928276" type="Player" />
+                        <action id="-12" name="Subtract from" sid="619895166918495" type="Player">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="708028412286367">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="313569809806097" type="Player">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="220088709048876" type="Function">
+                                    <param id="0" name="Name">&quot;StartDeathAnimation&quot;</param>
+                                    <param id="1" name="Parameter {n}">Player.UID{###}PlayerSp.UID</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="591169034646415" type="System">
+                                    <param id="0" name="Seconds">2.0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="749732883575807" type="Function">
+                                    <param id="0" name="Name">&quot;MoveToInitialPosition&quot;</param>
+                                    <param id="1" name="Parameter {n}">Player.UID{###}PlayerSp.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="863059009379857">
                     <conditions>
@@ -1411,5 +1555,180 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="603410108509199" title="HUD">
+            <sub-events>
+                <event-block sid="468248779155411">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="511645896038787" type="System">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="170942949665901">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="344453335873136" type="Player">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="863733451024939" type="Health">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Player.PlayerID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="897344275245578" type="Health">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="671969841907034">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="659779703356727" type="Player">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="385941431346318" type="Health">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Player.PlayerID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="941017737366890" type="Health">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="645247082218187">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="103103666277649" type="Player">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="810232865605008" type="Health">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Player.PlayerID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="656346246011569" type="Health">
+                                    <param id="0" name="Frame number">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="658840473298058">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="886660939174696" type="Player">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="583105049925651" type="Health">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Player.PlayerID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="612506780351257" type="Health">
+                                    <param id="0" name="Frame number">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="800845428364187">
+            <conditions>
+                <condition id="0" name="On function" sid="608687415896012" type="Function">
+                    <param id="0" name="Name">&quot;StartDeathAnimation&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="864725611858878">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="324943338302318" type="Player">
+                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="876144427944608" type="PlayerSp">
+                            <param id="0" name="Unique ID">Function.Param(1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="509773445440082" type="Player">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Value">IDLE</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="639630324891892" type="Player">
+                            <param id="0" name="Instance variable">Listening</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="347933715820080" type="Player">
+                            <param id="0" name="Instance variable">Immune</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="339243954186826" type="PlayerSp">
+                            <param id="0" name="Animation">&quot;Death&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="3" name="Start" sid="860165975037298" type="PlayerSp">
+                            <param id="0" name="From">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="174484065815773" type="PlayerSp">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">2.0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="511310745451557">
+            <conditions>
+                <condition id="0" name="On function" sid="497833539698096" type="Function">
+                    <param id="0" name="Name">&quot;MoveToInitialPosition&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="146628656215000">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="168877085004027" type="Player">
+                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="377016504524420" type="PlayerSp">
+                            <param id="0" name="Unique ID">Function.Param(1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="332749614178062" type="Player">
+                            <param id="0" name="X">Player.InitialX</param>
+                            <param id="1" name="Y">Player.InitialY</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="934968351606423" type="PlayerSp">
+                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="261931633140881" type="PlayerSp">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">2.0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="185403127006121" type="Player">
+                            <param id="0" name="Instance variable">Immune</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

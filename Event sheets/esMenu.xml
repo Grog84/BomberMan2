@@ -3,8 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>esMenu</name>
     <events>
-        <variable constant="1" name="1PLAY_Y" sid="531475219011791" static="0" type="number">356</variable>
-        <variable constant="1" name="2PLAY_Y" sid="946043914690522" static="0" type="number">445</variable>
+        <variable constant="1" name="1PLAY_Y" sid="531475219011791" static="0" type="number">348</variable>
+        <variable constant="1" name="2PLAY_Y" sid="946043914690522" static="0" type="number">437</variable>
         <variable constant="0" name="TriggerDoubleGlow" sid="188115344844580" static="0" type="number">0</variable>
         <variable constant="0" name="TriggerFinalGlow" sid="651648805527345" static="0" type="number">0</variable>
         <variable constant="0" name="FadeRatio" sid="314421951208613" static="0" type="number">0</variable>
@@ -613,6 +613,66 @@
                             <param id="1" name="Value">1</param>
                         </action>
                         <action id="-9" name="Destroy" sid="201064253121735" type="Glow" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="381193636408731">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="172098294174627" type="Keyboard">
+                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="634564642926100">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="302954117936335" type="Arrow">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Y co-ordinate">1PLAY_Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="536374439725928" type="1Play">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="601296968859989" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="225800027731265" type="System">
+                            <param id="0" name="Variable">Players</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="738663067310676" type="System">
+                            <param id="0" name="Layout">Level</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="637296099768594">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="311277793921801" type="Arrow">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Y co-ordinate">2PLAY_Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="138243358650731" type="2Play">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="611760350653165" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="565385712786235" type="System">
+                            <param id="0" name="Variable">Players</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="780841846194523" type="System">
+                            <param id="0" name="Layout">Level</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
