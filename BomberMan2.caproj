@@ -22,6 +22,7 @@
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
@@ -829,6 +830,81 @@
                     <frame duration="1" hotspotX="0.433333" hotspotY="0.545455" original-source="C:\Game_Development\Arts\BomberMan\1_3.png" />
                     <frame duration="1" hotspotX="0.528571" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\2_3.png" />
                     <frame duration="1" hotspotX="0.528571" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\3_3.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="EndLevel" sid="125110019291628">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Rotate" sid="395030486957916">
+                    <behavior id="Rotate" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="486167066619924">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="336063272195854" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\Sprites\Blocks\Portal.png">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="0.5" y="0.0625" />
+                            <point x="0.8125" y="0.1875" />
+                            <point x="0.9375" y="0.5" />
+                            <point x="0.8125" y="0.8125" />
+                            <point x="0.5" y="0.9375" />
+                            <point x="0.1875" y="0.8125" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Winner" sid="115019874707159">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="565913423292859">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="201996717283457" speed="5">
+                    <frame duration="1" hotspotX="0.502463" hotspotY="0.522388" original-source="C:\Game_Development\Arts\BomberMan\Fonts\P1_Wins.png">
+                        <collision-poly>
+                            <point x="0.0246305" y="0.253731" />
+                            <point x="0.502463" y="0.835821" />
+                            <point x="0.995074" y="0.164179" />
+                            <point x="0.995074" y="0.865672" />
+                            <point x="0.502463" y="0.985075" />
+                            <point x="0.00246305" y="0.910448" />
+                            <point x="0.00246305" y="0.507463" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.501134" hotspotY="0.507463" original-source="C:\Game_Development\Arts\BomberMan\Fonts\P2_Wins.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite" sid="976655113454445">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="ReplaceColor">
+                    <effect id="replacecolor" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="836316326741290" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\bombermanhappy2.png">
+                        <collision-poly>
+                            <point x="0.29125" y="0.29125" />
+                            <point x="0.5" y="0.02125" />
+                            <point x="0.7425" y="0.2575" />
+                            <point x="0.8875" y="0.5" />
+                            <point x="0.59875" y="0.59875" />
+                            <point x="0.5" y="0.94" />
+                            <point x="0.16125" y="0.83875" />
+                            <point x="0.18" y="0.5" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>

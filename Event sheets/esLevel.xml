@@ -3,6 +3,10 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>esLevel</name>
     <events>
+        <variable constant="0" name="EndscreenTimeRatio" sid="556458942418513" static="0" type="number">0</variable>
+        <variable constant="0" name="EndscreenDuration" sid="130391163062007" static="0" type="number">0</variable>
+        <variable constant="0" name="EndscreenTime" sid="502010423544259" static="0" type="number">0</variable>
+        <variable constant="0" name="Winner" sid="756880032902108" static="0" type="number">-1</variable>
         <variable constant="0" name="Players" sid="315580871792889" static="0" type="number">2</variable>
         <variable constant="1" name="BOMB_TIMER" sid="896999325270146" static="0" type="number">3</variable>
         <variable constant="1" name="TILESIZE" sid="290097279039753" static="0" type="number">64</variable>
@@ -1729,6 +1733,120 @@
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="584450524308927">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="973441910668043" type="System">
+                    <param id="0" name="First value">eBlock.Count</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="1" name="Start fade" sid="503073503105639" type="EndLevel" />
+            </actions>
+        </event-block>
+        <event-block sid="876037183826662">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="951447223882499" type="Player">
+                    <param id="0" name="Object">EndLevel</param>
+                </condition>
+                <condition id="-10" name="Compare opacity" sid="289512464593307" type="EndLevel">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Opacity">90</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="725149943318835" type="System">
+                    <param id="0" name="Variable">Winner</param>
+                    <param id="1" name="Value">Player.PlayerID</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="661985904110490">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="194728510362170" type="System">
+                    <param id="0" name="Variable">Winner</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="498972512711997">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="291507462299829" type="System">
+                            <param id="0" name="Variable">Winner</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-17" name="Compare opacity" sid="333524385226209" type="System">
+                            <param id="0" name="Layer">4</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Opacity">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="816342542025669" type="Function">
+                            <param id="0" name="Name">&quot;IncreaseLayoutOpacity&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="345463116462267">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="142207253368230" type="System">
+                            <param id="0" name="Variable">Winner</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-17" name="Compare opacity" sid="265580671116276" type="System">
+                            <param id="0" name="Layer">4</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Opacity">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="827899095542436" type="Function">
+                            <param id="0" name="Name">&quot;IncreaseLayoutOpacity&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="717954144194157">
+            <conditions>
+                <condition id="0" name="On function" sid="814402990468014" type="Function">
+                    <param id="0" name="Name">&quot;IncreaseLayoutOpacity&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="403059089625335" type="System">
+                    <param id="0" name="Variable">EndscreenTimeRatio</param>
+                    <param id="1" name="Value">EndscreenTime/EndscreenDuration</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="802814657149909" type="System">
+                    <param id="0" name="Layer">4</param>
+                    <param id="1" name="Opacity">EndscreenTimeRatio*EndscreenTimeRatio*100.0</param>
+                </action>
+                <action id="-10" name="Add to" sid="665242051109854" type="System">
+                    <param id="0" name="Variable">EndscreenTime</param>
+                    <param id="1" name="Value">dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="942341875592233">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="696741544958672" type="Keyboard">
+                    <param id="0" name="Key">8 (Backspace)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="312073271285669" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
