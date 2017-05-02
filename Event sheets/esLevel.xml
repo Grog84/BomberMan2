@@ -4,7 +4,7 @@
     <name>esLevel</name>
     <events>
         <variable constant="0" name="EndscreenTimeRatio" sid="556458942418513" static="0" type="number">0</variable>
-        <variable constant="0" name="EndscreenDuration" sid="130391163062007" static="0" type="number">0</variable>
+        <variable constant="0" name="EndscreenDuration" sid="130391163062007" static="0" type="number">3</variable>
         <variable constant="0" name="EndscreenTime" sid="502010423544259" static="0" type="number">0</variable>
         <variable constant="0" name="Winner" sid="756880032902108" static="0" type="number">-1</variable>
         <variable constant="0" name="Players" sid="315580871792889" static="0" type="number">2</variable>
@@ -136,6 +136,9 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="355224806435700" type="Player" />
+                        <action id="-9" name="Destroy" sid="620565406613219" type="Player" />
+                        <action id="-9" name="Destroy" sid="536083281097595" type="PIcon" />
+                        <action id="-9" name="Destroy" sid="160282506198308" type="BaseHud" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -823,6 +826,27 @@
                             <param id="1" name="Y">int(Self.Y/TILESIZE)*TILESIZE + 32</param>
                         </action>
                         <action id="-10" name="Set value" sid="365928843646982" type="Player">
+                            <param id="0" name="Instance variable">Timer</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="567855939077668">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="894598560651586" type="Player">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="713140510640456" type="Player">
+                            <param id="0" name="Instance variable">Direction</param>
+                            <param id="1" name="Value">IDLE</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="536074542260655" type="Player">
+                            <param id="0" name="X">int(Self.X/TILESIZE)*TILESIZE + 32</param>
+                            <param id="1" name="Y">int(Self.Y/TILESIZE)*TILESIZE + 32</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="705282180123032" type="Player">
                             <param id="0" name="Instance variable">Timer</param>
                             <param id="1" name="Value">0</param>
                         </action>
@@ -1763,57 +1787,65 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="661985904110490">
+        <event-block sid="498972512711997">
             <conditions>
-                <condition id="-14" name="Compare variable" sid="194728510362170" type="System">
+                <condition id="-14" name="Compare variable" sid="291507462299829" type="System">
                     <param id="0" name="Variable">Winner</param>
-                    <param id="1" name="Comparison">1</param>
-                    <param id="2" name="Value">-1</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="333524385226209" type="System">
+                    <param id="0" name="Layer">4</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Opacity">100</param>
                 </condition>
             </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="498972512711997">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="291507462299829" type="System">
-                            <param id="0" name="Variable">Winner</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                        <condition id="-17" name="Compare opacity" sid="333524385226209" type="System">
-                            <param id="0" name="Layer">4</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Opacity">100</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="816342542025669" type="Function">
-                            <param id="0" name="Name">&quot;IncreaseLayoutOpacity&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="345463116462267">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="142207253368230" type="System">
-                            <param id="0" name="Variable">Winner</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">2</param>
-                        </condition>
-                        <condition id="-17" name="Compare opacity" sid="265580671116276" type="System">
-                            <param id="0" name="Layer">4</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Opacity">100</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="827899095542436" type="Function">
-                            <param id="0" name="Name">&quot;IncreaseLayoutOpacity&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
+            <actions>
+                <action id="0" name="Call function" sid="816342542025669" type="Function">
+                    <param id="0" name="Name">&quot;IncreaseLayoutOpacity&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="345463116462267">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="142207253368230" type="System">
+                    <param id="0" name="Variable">Winner</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="265580671116276" type="System">
+                    <param id="0" name="Layer">4</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Opacity">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="827899095542436" type="Function">
+                    <param id="0" name="Name">&quot;IncreaseLayoutOpacity&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="949869741492640">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="900237791527250" type="System">
+                    <param id="0" name="Variable">Winner</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="130824972617618" type="System">
+                    <param id="0" name="Layer">4</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Opacity">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="779373914734395" type="Function">
+                    <param id="0" name="Name">&quot;IncreaseLayoutOpacity&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
         </event-block>
         <event-block sid="717954144194157">
             <conditions>
@@ -1844,6 +1876,94 @@
             </conditions>
             <actions>
                 <action id="-2" name="Go to layout" sid="312073271285669" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="216203666804472">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="881373635920983" type="System">
+                    <param id="0" name="First value">Player.Count</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="371568855941515" type="System">
+                    <param id="0" name="Variable">Winner</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="890969262418076">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="765601381349101" type="System">
+                    <param id="0" name="First value">Winner</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">2</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="318084079536810" type="System">
+                    <param id="0" name="Layer">4</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Opacity">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="364544619783506" type="WinnerSp">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-28" name="Set effect parameter" sid="478124526234002" type="Sprite">
+                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                    <param id="1" name="Parameter index">6</param>
+                    <param id="2" name="Value">25</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="539780324677690">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="449346091005647" type="System">
+                    <param id="0" name="First value">Winner</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">3</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="105767330917084" type="System">
+                    <param id="0" name="Layer">4</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Opacity">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="903562761080058" type="WinnerSp">
+                    <param id="0" name="Frame number">2</param>
+                </action>
+                <action id="5" name="Set frame" sid="352748971147508" type="Sprite">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-28" name="Set effect parameter" sid="802119130184314" type="Sprite">
+                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                    <param id="1" name="Parameter index">6</param>
+                    <param id="2" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="615858601693117">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="621136843095851" type="System">
+                    <param id="0" name="First value">LayerOpacity(4)</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">100</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="492862714866765" type="System">
+                    <param id="0" name="Variable">Winner</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="952746598147616" type="System">
+                    <param id="0" name="Seconds">5.0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="486097223120637" type="System">
                     <param id="0" name="Layout">Menu</param>
                 </action>
             </actions>

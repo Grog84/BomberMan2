@@ -3738,7 +3738,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Winner" uid="134">
+                <instance type="WinnerSp" uid="134">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -3755,7 +3755,7 @@
                                 <period-random>0</period-random>
                                 <period-offset>0</period-offset>
                                 <period-offset-random>0</period-offset-random>
-                                <magnitude>5</magnitude>
+                                <magnitude>3</magnitude>
                                 <magnitude-random>0</magnitude-random>
                             </properties>
                         </behavior-instance>
@@ -3791,7 +3791,7 @@
                                 <g-source>255</g-source>
                                 <r-replace>0</r-replace>
                                 <r-source>255</r-source>
-                                <tolerance>0.25</tolerance>
+                                <tolerance>0</tolerance>
                             </parameters>
                         </effect-instance>
                     </effect-instances>

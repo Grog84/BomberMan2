@@ -860,7 +860,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Winner" sid="115019874707159">
+        <object-type name="WinnerSp" sid="115019874707159">
             <plugin id="Sprite" />
             <behaviors>
                 <behavior-type name="Sine" sid="565913423292859">
@@ -868,7 +868,7 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="201996717283457" speed="5">
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="201996717283457" speed="0">
                     <frame duration="1" hotspotX="0.502463" hotspotY="0.522388" original-source="C:\Game_Development\Arts\BomberMan\Fonts\P1_Wins.png">
                         <collision-poly>
                             <point x="0.0246305" y="0.253731" />
@@ -881,6 +881,7 @@
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.501134" hotspotY="0.507463" original-source="C:\Game_Development\Arts\BomberMan\Fonts\P2_Wins.png" />
+                    <frame duration="1" hotspotX="0.501134" hotspotY="0.507463" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -892,7 +893,7 @@
                 </effect-type>
             </effects>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="836316326741290" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="836316326741290" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Game_Development\Arts\BomberMan\bombermanhappy2.png">
                         <collision-poly>
                             <point x="0.29125" y="0.29125" />
@@ -905,6 +906,7 @@
                             <point x="0.18" y="0.5" />
                         </collision-poly>
                     </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_55\Documents\Assets\0_CommonAssets\explosion_boom_BM.png" />
                 </animation>
             </animation-folder>
         </object-type>
